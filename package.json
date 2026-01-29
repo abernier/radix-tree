@@ -1,0 +1,79 @@
+{
+  "name": "tpl-react-foo",
+  "version": "1.0.0",
+  "description": "A React component",
+  "keywords": [
+    "react",
+    "component",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "homepage": "https://github.com/abernier/tpl-react-foo",
+  "bugs": {
+    "url": "https://github.com/abernier/tpl-react-foo/issues"
+  },
+  "author": "abernier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abernier/tpl-react-foo.git"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "packageManager": "pnpm@10.27.0",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.27.7",
+    "@storybook/addon-docs": "^10.1.11",
+    "@storybook/addon-themes": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "chromatic": "^13.3.5",
+    "husky": "^9.1.7",
+    "jsdom": "^27.4.0",
+    "lint-staged": "^16.2.7",
+    "postcss": "^8.5.6",
+    "prettier": "^3.3.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "storybook": "^10.1.11",
+    "tailwindcss": "^4.1.18",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^4.0.16"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lgtm": "pnpm run build && pnpm run check-format && pnpm run check-exports && pnpm run typecheck && pnpm run test",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules cjs-resolves-to-esm no-resolution",
+    "release": "pnpm run build && changeset publish",
+    "local-release": "pnpm run lgtm && changeset version && changeset publish",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --project-token $CHROMATIC_PROJECT_TOKEN",
+    "prepare": "husky",
+    "changeset": "pnpm exec changeset"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "dependencies": {}
+}
