@@ -2,17 +2,18 @@
 
 ## ✅ Configuration Terminée
 
-Votre repository est maintenant configuré pour la publication avec **Trusted Publisher** (Provenance)!
+Votre repository est maintenant configuré pour la publication avec **Trusted Publishers**!
 
 ## 📝 Ce qui a été fait
 
-1. ✅ Workflow GitHub Actions mis à jour avec support npm
+1. ✅ Workflow GitHub Actions mis à jour pour OIDC
 2. ✅ Flag `--provenance` ajouté pour la publication sécurisée
 3. ✅ Documentation complète créée dans `PUBLISHING.md`
+4. ✅ **Aucun token NPM nécessaire!**
 
 ## 🎯 Vos Prochaines Actions
 
-### 1️⃣ Créer un Token npm Automation (5 minutes)
+### 1️⃣ Configurer le Trusted Publisher sur npm (5 minutes)
 
 ```bash
 # Si pas encore de compte npm:
@@ -21,22 +22,15 @@ Votre repository est maintenant configuré pour la publication avec **Trusted Pu
 
 # Ensuite:
 # 1. Activez 2FA: https://www.npmjs.com/settings/YOUR_USERNAME/twofa
-# 2. Créez un token: https://www.npmjs.com/settings/YOUR_USERNAME/tokens
-#    → "Generate New Token" → "Classic Token" → "Automation"
-# 3. Copiez le token (vous ne le verrez qu'une fois!)
+# 2. Créez le package avec trusted publishing:
+#    https://www.npmjs.com/settings/YOUR_USERNAME/packages
+#    → "Create a new package with trusted publishing"
+#    → Package name: radix-tree
+#    → GitHub repository: abernier/radix-tree
+#    → Workflow file: .github/workflows/release.yml
 ```
 
-### 2️⃣ Ajouter le Token dans GitHub (2 minutes)
-
-```bash
-# 1. Allez sur: https://github.com/abernier/radix-tree/settings/secrets/actions
-# 2. Cliquez "New repository secret"
-# 3. Nom: NPM_TOKEN
-# 4. Valeur: collez votre token npm
-# 5. Cliquez "Add secret"
-```
-
-### 3️⃣ Créer un Changeset (1 minute)
+### 2️⃣ Créer un Changeset (1 minute)
 
 ```bash
 # À la racine de votre projet
@@ -47,7 +41,7 @@ pnpm changeset
 # - Summary: "Initial release of radix-tree component"
 ```
 
-### 4️⃣ Pusher et Publier
+### 3️⃣ Pusher et Publier
 
 ```bash
 # Commit le changeset
@@ -66,16 +60,16 @@ Pour tous les détails, consultez: **[PUBLISHING.md](./PUBLISHING.md)**
 
 ## ⚡ Résumé Ultra-Rapide
 
-1. **Compte npm** + 2FA → **Token Automation**
-2. **GitHub Secret** `NPM_TOKEN` = votre token
+1. **Compte npm** + 2FA → **Configurer Trusted Publisher** sur npm.com
+2. **PAS de token nécessaire** (c'est l'avantage!)
 3. **`pnpm changeset`** pour décrire la release
 4. **Push sur main** → PR automatique créée
 5. **Merge la PR** → Package publié sur npm ✨
 
-## 🔐 Sécurité Provenance
+## 🔐 Sécurité avec Trusted Publishers
 
 Votre package sera publié avec:
-
+- ✅ Authentification OIDC (pas de token)
 - ✅ Attestation de provenance GitHub
 - ✅ Lien vers le code source exact
 - ✅ Badge vérifié sur npm
@@ -83,8 +77,8 @@ Votre package sera publié avec:
 
 ## ❓ Besoin d'Aide?
 
+- Questions sur trusted publishers: https://docs.npmjs.com/trusted-publishers
 - Questions sur changesets: https://github.com/changesets/changesets
-- Questions sur npm provenance: https://docs.npmjs.com/generating-provenance-statements
 - Problème de workflow: Voir le troubleshooting dans PUBLISHING.md
 
 ---

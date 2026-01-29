@@ -1,8 +1,8 @@
-# ✅ Configuration Complète - npm Trusted Publishing
+# ✅ Configuration Complète - npm Trusted Publishers
 
 ## 🎉 Félicitations!
 
-Votre repository **radix-tree** est maintenant entièrement configuré pour la publication sur npm avec **Trusted Publisher** (Provenance).
+Votre repository **radix-tree** est maintenant entièrement configuré pour la publication sur npm avec **Trusted Publishers**.
 
 ---
 
@@ -13,16 +13,19 @@ Votre repository **radix-tree** est maintenant entièrement configuré pour la p
 Le workflow de release a été mis à jour avec:
 
 ```yaml
+# Permission OIDC pour l'authentification sans token
+permissions:
+  id-token: write
+
 # Configuration npm registry
 registry-url: "https://registry.npmjs.org"
 
-# Variables d'environnement pour l'authentification
-NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+# Pas de NODE_AUTH_TOKEN nécessaire!
 ```
 
 ### 2. Script de Publication (`package.json`)
 
-Le script `release` inclut maintenant le flag de provenance:
+Le script `release` inclut le flag de provenance:
 
 ```json
 "release": "pnpm run build && changeset publish --provenance"
@@ -39,22 +42,20 @@ Deux guides ont été créés:
 
 ## 🚀 Prochaines Étapes (À FAIRE)
 
-### Étape 1: Token npm (5 min)
+### Étape 1: Configuration Trusted Publisher sur npm (5 min)
 
 1. Créez un compte sur https://www.npmjs.com/signup (si nécessaire)
 2. Activez 2FA: https://www.npmjs.com/settings/[YOUR_USERNAME]/twofa
-3. Créez un token "Automation": https://www.npmjs.com/settings/[YOUR_USERNAME]/tokens
-4. Copiez le token (vous ne le verrez qu'une fois!)
+3. Configurez le Trusted Publisher:
+   - Allez sur: https://www.npmjs.com/settings/[YOUR_USERNAME]/packages
+   - Cliquez "Create a new package with trusted publishing"
+   - Remplissez:
+     - Package name: `radix-tree`
+     - GitHub repository: `abernier/radix-tree`
+     - Workflow file: `.github/workflows/release.yml`
+     - Environment: (laissez vide)
 
-### Étape 2: GitHub Secret (2 min)
-
-1. Allez sur: https://github.com/abernier/radix-tree/settings/secrets/actions
-2. Cliquez "New repository secret"
-3. Nom: `NPM_TOKEN`
-4. Valeur: votre token npm
-5. "Add secret"
-
-### Étape 3: Créer un Changeset (1 min)
+### Étape 2: Créer un Changeset (1 min)
 
 Dans votre terminal local:
 
@@ -66,7 +67,7 @@ pnpm changeset
 # Summary: "Initial release of radix-tree component"
 ```
 
-### Étape 4: Publier
+### Étape 3: Publier
 
 ```bash
 git add .changeset/*.md
@@ -79,14 +80,15 @@ git push origin main
 
 ---
 
-## 🔐 Pourquoi Trusted Publishing?
+## 🔐 Pourquoi Trusted Publishers?
 
-Le package sera publié avec **provenance**:
+Publication sans token avec OIDC:
 
-✅ Preuve cryptographique que le package vient de ce repository  
-✅ Lien vers le code source exact  
-✅ Badge vérifié sur npm  
-✅ Plus sécurisé que la publication manuelle
+✅ **Pas de secret à gérer** - Aucun NPM_TOKEN nécessaire!  
+✅ **Plus sécurisé** - Pas de risque de fuite de token  
+✅ **Authentification OIDC** - Via l'identité GitHub Actions  
+✅ **Provenance automatique** - Preuve cryptographique d'origine  
+✅ **Badge vérifié** - Sur npm  
 
 ---
 
@@ -109,7 +111,7 @@ Tous les tests sont passés lors de la configuration! ✨
 
 - **Guide Rapide**: [NEXT_STEPS.md](./NEXT_STEPS.md)
 - **Guide Complet**: [PUBLISHING.md](./PUBLISHING.md)
-- **npm Provenance**: https://docs.npmjs.com/generating-provenance-statements
+- **npm Trusted Publishers**: https://docs.npmjs.com/trusted-publishers
 - **Changesets**: https://github.com/changesets/changesets
 
 ---
@@ -118,7 +120,11 @@ Tous les tests sont passés lors de la configuration! ✨
 
 ### Le package "radix-tree" est-il disponible sur npm?
 
-La première publication réservera le nom automatiquement. Vérifiez sur https://www.npmjs.com/package/radix-tree
+Vous devez créer le package via la configuration trusted publisher sur npm.com AVANT la première publication. Vérifiez sur https://www.npmjs.com/package/radix-tree
+
+### Ai-je vraiment besoin d'un token npm?
+
+**Non!** C'est l'avantage de Trusted Publishers. L'authentification se fait automatiquement via OIDC.
 
 ### Puis-je tester localement avant de publier?
 
@@ -141,6 +147,6 @@ pnpm pack
 
 ## ✨ C'est prêt!
 
-Suivez simplement les **4 étapes** ci-dessus et votre package sera publié sur npm avec provenance!
+Suivez simplement les **3 étapes** ci-dessus et votre package sera publié sur npm avec trusted publishers!
 
 **Bon courage! 🎉**
