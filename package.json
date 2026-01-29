@@ -1,5 +1,5 @@
 {
-  "name": "tpl-react-foo",
+  "name": "radix-tree",
   "version": "1.0.0",
   "description": "A React component",
   "keywords": [
@@ -13,14 +13,14 @@
       "import": "./dist/index.js"
     }
   },
-  "homepage": "https://github.com/abernier/tpl-react-foo",
+  "homepage": "https://github.com/abernier/radix-tree",
   "bugs": {
-    "url": "https://github.com/abernier/tpl-react-foo/issues"
+    "url": "https://github.com/abernier/radix-tree/issues"
   },
   "author": "abernier",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abernier/tpl-react-foo.git"
+    "url": "git+https://github.com/abernier/radix-tree.git"
   },
   "license": "MIT",
   "files": [
