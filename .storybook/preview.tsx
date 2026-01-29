@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 import { useEffect } from "react";
 import "./preview.css";
-import "../src/tailwind.css";
+import "../packages/radix-tree/src/tailwind.css";
 
 import { withThemeByClassName } from "@storybook/addon-themes";
 

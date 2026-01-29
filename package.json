@@ -44,16 +44,17 @@
   },
   "scripts": {
     "build": "pnpm --filter \"./packages/*\" run build",
-    "lgtm": "pnpm run build && pnpm run check-format && pnpm run typecheck && pnpm run test",
+    "lgtm": "pnpm run build && pnpm run check-format && pnpm run check-exports && pnpm run typecheck && pnpm run test",
     "typecheck": "pnpm --filter \"./packages/*\" run typecheck",
     "test": "pnpm --filter \"./packages/*\" run test",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
+    "check-exports": "pnpm --filter \"./packages/*\" run check-exports",
     "release": "pnpm run build && changeset publish",
     "local-release": "pnpm run lgtm && changeset version && changeset publish",
-    "storybook": "pnpm --filter \"@abernier/radix-tree\" run storybook",
-    "build-storybook": "pnpm --filter \"@abernier/radix-tree\" run build-storybook",
-    "chromatic": "pnpm --filter \"@abernier/radix-tree\" run chromatic",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --project-token $CHROMATIC_PROJECT_TOKEN",
     "prepare": "husky",
     "changeset": "pnpm exec changeset"
   }

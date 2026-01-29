@@ -34,13 +34,13 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "build": "echo 'No build step yet'",
-    "typecheck": "echo 'No typecheck yet'",
-    "test": "echo 'No tests yet'"
+    "build": "exit 0",
+    "typecheck": "exit 0",
+    "test": "exit 0",
+    "check-exports": "exit 0"
   },
   "peerDependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
-  },
-  "dependencies": {}
+  }
 }

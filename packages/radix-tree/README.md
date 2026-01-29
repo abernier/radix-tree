@@ -32,6 +32,6 @@ pnpm --filter @abernier/radix-tree build
 # Run tests
 pnpm --filter @abernier/radix-tree test
 
-# Run Storybook
-pnpm --filter @abernier/radix-tree storybook
+# Run Storybook (from root, shows all packages)
+pnpm run storybook
 ```
