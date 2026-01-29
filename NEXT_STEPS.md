@@ -39,7 +39,7 @@ Votre repository est maintenant configuré pour la publication avec **Trusted Pu
 ### 3️⃣ Créer un Changeset (1 minute)
 
 ```bash
-cd /home/runner/work/radix-tree/radix-tree
+# À la racine de votre projet
 pnpm changeset
 
 # Répondez:
