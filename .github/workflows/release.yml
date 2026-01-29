@@ -32,4 +32,7 @@ jobs:
         with:
           publish: pnpm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Use PAT instead of GITHUB_TOKEN to allow PR creation
+          # The default GITHUB_TOKEN cannot create PRs in workflows triggered by push events
+          # Create a PAT with 'repo' scope and add it as CHANGESETS_TOKEN secret
+          GITHUB_TOKEN: ${{ secrets.CHANGESETS_TOKEN || secrets.GITHUB_TOKEN }}
