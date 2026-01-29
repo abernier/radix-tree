@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useMemo } from "react";
 
 import { composeEventHandlers } from "@radix-ui/primitive";
 import { createContextScope, type Scope } from "@radix-ui/react-context";
@@ -290,9 +289,7 @@ export type FlatNode<T extends RecursiveNode = RecursiveNode> = Omit<
   ancestors: (string | null)[];
 };
 
-type TreeFactoryBaseProps<T extends RecursiveNode> = {
-  /** */
-} & TreeProps;
+type TreeFactoryBaseProps<T extends RecursiveNode> = TreeProps;
 
 type TreeFactoryProps<T extends RecursiveNode> =
   | (TreeFactoryBaseProps<T> & {

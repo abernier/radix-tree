@@ -34,7 +34,8 @@ describe("Tree", () => {
         <Tree.Item nodeId="item2">Item 2</Tree.Item>
       </Tree.Root>,
     );
-    const selectedItem = container.querySelector('[aria-selected="true"]');
-    expect(selectedItem).toBeTruthy();
+    const items = container.querySelectorAll('[role="treeitem"]');
+    expect(items[0]?.getAttribute("aria-selected")).toBe("true");
+    expect(items[1]?.getAttribute("aria-selected")).toBe(null);
   });
 });
