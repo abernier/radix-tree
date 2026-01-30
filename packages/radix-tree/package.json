@@ -1,6 +1,6 @@
 {
   "name": "@abernier/radix-tree",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A radix tree",
   "keywords": [
     "react",
