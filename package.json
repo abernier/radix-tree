@@ -1,18 +1,6 @@
 {
   "name": "radix-primitives",
-  "version": "0.0.0",
   "private": true,
-  "description": "A monorepo containing radix primitives: tree and list components",
-  "homepage": "https://github.com/abernier/radix-primitives",
-  "bugs": {
-    "url": "https://github.com/abernier/radix-primitives/issues"
-  },
-  "author": "abernier",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abernier/radix-primitives.git"
-  },
-  "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.27.0",
   "devDependencies": {
