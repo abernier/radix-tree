@@ -5,10 +5,10 @@
 
 A monorepo containing radix primitives: tree and list components.
 
-## Packages
+## Workspaces
 
-- [@abernier/radix-tree](./packages/radix-tree) - A radix tree component
-- [@abernier/radix-list](./packages/radix-list) - A radix list component
+- [radix-tree](./packages/radix-tree) - A radix tree component
+- [radix-list](./packages/radix-list) - A radix list component
 
 # Dev
 
