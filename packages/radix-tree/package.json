@@ -34,7 +34,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tsup": "*",
-    "typescript": "^5.5.4",
+    "typescript": "*",
     "vitest": "*"
   },
   "scripts": {
