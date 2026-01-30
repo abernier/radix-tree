@@ -3,7 +3,3 @@
 # radix-list
 
 A radix list component.
-
-## Development
-
-This package is part of the [radix-primitives](../../README.md) monorepo.

@@ -3,7 +3,3 @@
 # radix-tree
 
 A radix tree component.
-
-## Development
-
-This package is part of the [radix-primitives](../../README.md) monorepo.
