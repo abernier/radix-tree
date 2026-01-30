@@ -2,7 +2,7 @@
 
 # radix-primitives
 
-A monorepo containing radix primitives: tree and list components.
+A monorepo containing radix primitives.
 
 ## Workspaces
 
