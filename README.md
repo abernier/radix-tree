@@ -1,13 +1,13 @@
 [![](https://img.shields.io/badge/chromatic-171c23.svg?logo=chromatic)](https://www.chromatic.com/library?appId=697b1f722390b05fb8c0029c&branch=main)
 
-# radix-primitives
+# tpl-react-foo-bar
 
-A monorepo containing radix primitives.
+A monorepo template.
 
 ## Workspaces
 
-- [radix-tree](./packages/radix-tree) - A radix tree component
-- [radix-list](./packages/radix-list) - A radix list component
+- [react-foo](./packages/react-foo) - A simple foo component
+- [react-bar](./packages/react-bar) - A simple bar component
 
 # Dev
 

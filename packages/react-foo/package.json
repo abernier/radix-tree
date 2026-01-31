@@ -1,0 +1,49 @@
+{
+  "name": "@abernier/react-foo",
+  "version": "1.0.0",
+  "description": "A simple foo component",
+  "keywords": [
+    "react",
+    "foo"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "homepage": "https://github.com/abernier/tpl-react-foo-bar/tree/main/packages/react-foo",
+  "bugs": {
+    "url": "https://github.com/abernier/tpl-react-foo-bar/issues"
+  },
+  "author": "abernier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abernier/tpl-react-foo-bar.git"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "*",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tsup": "*",
+    "typescript": "*",
+    "vitest": "*"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "check-exports": "attw --pack . --ignore-rules cjs-resolves-to-esm no-resolution"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}
